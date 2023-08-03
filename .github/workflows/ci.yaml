@@ -5,6 +5,12 @@ jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
     steps:
+    # Checkout helps to run the python command
+      - uses: actions/checkout@v3 
       - name: hello-github
         run: |
           echo "Hello World"
+      - name: run python script
+        run: |
+          pip install -r requirements.txt
+          python ci.py
